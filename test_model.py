@@ -8,7 +8,6 @@ def test_model_file_exists():
 def test_model_loads():
     model = joblib.load("model.pkl")
     assert model is not None
-
 def test_prediction_output():
     model = joblib.load("model.pkl")
 
@@ -22,7 +21,7 @@ def test_prediction_output():
 
     pred = model.predict(sample)[0]
 
-    assert pred in [0,1]
+    assert pred == 5      # Wrong intentionally
 
 def test_dataset_exists():
     assert os.path.exists("data/student_placement.csv")
